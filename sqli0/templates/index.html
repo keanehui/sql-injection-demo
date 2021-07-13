@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css?v=1">
+    <title>Customer Database</title>
+</head>
+<body>
+    <div id="left_div">
+        <h1 id="title">Customer<br/>Database</h1>
+        <h5 id="count">Number of customers:&nbsp;{{ num_entries }}</h1>
+        <form action="result" method="GET">
+            <label for="firstName" id="first_name_label">First Name</label>
+            <input type="text" id="first_name_input" name="firstName" autocomplete="off" tabindex="1">
+            <button type="button" id="first_name_clear_button" tabindex="-1">&#x2716;</button>
+            <label for="lastName" id="password_label">Password</label>
+            <input type="text" id="password_input" name="password" autocomplete="off" tabindex="2">
+            <button type="button" id="password_clear_button" tabindex="-1">&#x2716;</button>
+            <button type="submit" id="search_button" tabindex="-1">Search</button>
+            <button type="button" id="reset_button" tabindex="-1">Reset</button>
+        </form>
+
+        <div id="autofill_div">
+            <button class="autofill_button" id="autofill_button_0" type="button" tabindex="-1">safe</button>
+            <button class="autofill_button" id="autofill_button_1" type="button" tabindex="-1">no_password</button>
+            <button class="autofill_button" id="autofill_button_2" type="button" tabindex="-1">all_entries</button>
+            <span>
+                <button class="autofill_button" id="autofill_button_3_1" type="button" tabindex="-1">all_tables</button>
+                <button class="autofill_button" id="autofill_button_3_2" type="button" tabindex="-1">access_other_table</button>
+            </span>
+            
+        </div>
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="../static/js/index.js?v=1"></script>
+</body>
+</html>

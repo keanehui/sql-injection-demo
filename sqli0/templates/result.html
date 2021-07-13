@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/result.css?v=1">
+    <title>Result</title>
+</head>
+<body>
+    
+    <div id="table_div">
+        <a href="/"><button id="back_button">&lt back</button></a>
+        <table>
+            <thead> 
+                <tr>
+                    <th colspan="6" style="background-color: white; color: black; font-size: 0.4cm;">
+                        {{ query_str }}
+                    </th>
+                </tr>
+                <tr>
+                    {% for col_name in col_names %}
+                        <th>{{ col_name }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% if customers|length > 0 %}
+                    {% for customer in customers %}
+                        <tr>
+                        {% for data in customer %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="6">No Result</td>
+                    </tr>
+                {% endif %}
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
